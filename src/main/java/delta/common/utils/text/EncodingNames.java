@@ -14,8 +14,8 @@ import java.util.SortedMap;
  */
 public class EncodingNames
 {
-  private static List<String> FREQUENT_ENCODINGS=null;
-  private static List<String> ALL_ENCODINGS=null;
+  private static List<String> _frequentEncodings=null;
+  private static List<String> _allEncodings=null;
 
   /**
    * UTF-8 encoding.
@@ -51,18 +51,18 @@ public class EncodingNames
    * Get a list of encodings considered as frequent encodings.
    * @return a list of encoding names.
    */
-  public static List<String>  getFrequentEncodings()
+  public static List<String> getFrequentEncodings()
   {
-    if (FREQUENT_ENCODINGS==null)
+    if (_frequentEncodings==null)
     {
       List<String> tmp=new ArrayList<String>();
       tmp.add(ISO8859_1);
       tmp.add(UTF_8);
       tmp.add(WINDOWS);
       tmp.add(DOS);
-      FREQUENT_ENCODINGS=Collections.unmodifiableList(tmp);
+      _frequentEncodings=Collections.unmodifiableList(tmp);
     }
-    return FREQUENT_ENCODINGS;
+    return _frequentEncodings;
   }
 
   /**
@@ -71,7 +71,7 @@ public class EncodingNames
    */
   public static List<String> getAllEncodings()
   {
-    if (ALL_ENCODINGS==null)
+    if (_allEncodings==null)
     {
       SortedMap<String,Charset> charsets=Charset.availableCharsets();
       Collection<Charset> charsetsColl=charsets.values();
@@ -84,8 +84,8 @@ public class EncodingNames
         name=charset.name();
         tmp.add(name);
       }
-      ALL_ENCODINGS=Collections.unmodifiableList(tmp);
+      _allEncodings=Collections.unmodifiableList(tmp);
     }
-    return ALL_ENCODINGS;
+    return _allEncodings;
   }
 }

@@ -21,9 +21,9 @@ public class ArchiveBuilder
   private static final Logger LOGGER=Logger.getLogger(ArchiveBuilder.class);
 
   private File _archiveFile;
-  private FileOutputStream fos;
-  private BufferedOutputStream bos;
-  private ZipOutputStream jos;
+  private FileOutputStream _fos;
+  private BufferedOutputStream _bos;
+  private ZipOutputStream _jos;
 
   /**
    * Constructor.
@@ -43,16 +43,16 @@ public class ArchiveBuilder
     boolean ok;
     try
     {
-      fos=new FileOutputStream(_archiveFile);
-      bos=new BufferedOutputStream(fos);
-      jos=new ZipOutputStream(bos);
+      _fos=new FileOutputStream(_archiveFile);
+      _bos=new BufferedOutputStream(_fos);
+      _jos=new ZipOutputStream(_bos);
       ok=true;
     }
     catch (IOException ioe)
     {
       LOGGER.error("",ioe);
-      StreamTools.close(jos);
-      jos=null;
+      StreamTools.close(_jos);
+      _jos=null;
       ok=false;
     }
     return ok;
@@ -72,9 +72,9 @@ public class ArchiveBuilder
       ZipEntry entry=new ZipEntry(archivePath.getPath());
       entry.setSize(absolute.length());
       byte[] buffer=FileIO.readFile(absolute);
-      jos.putNextEntry(entry);
-      jos.write(buffer,0,buffer.length);
-      jos.closeEntry();
+      _jos.putNextEntry(entry);
+      _jos.write(buffer,0,buffer.length);
+      _jos.closeEntry();
       ok=true;
     }
     catch (IOException ioe)
@@ -86,11 +86,10 @@ public class ArchiveBuilder
 
   /**
    * Add a file to this archive.
-   * @param absolute File to add.
    * @param archivePath Entry path in the archive.
    * @return <code>true</code> if it was successfull, <code>false</code> otherwise.
    */
-  private boolean addDirectoryEntry(File absolute, File archivePath)
+  private boolean addDirectoryEntry(File archivePath)
   {
     boolean ok;
     try
@@ -98,8 +97,8 @@ public class ArchiveBuilder
       String path=archivePath.getPath();
       if (!path.endsWith("/")) path=path+"/";
       ZipEntry entry=new ZipEntry(path);
-      jos.putNextEntry(entry);
-      jos.closeEntry();
+      _jos.putNextEntry(entry);
+      _jos.closeEntry();
       ok=true;
     }
     catch (IOException ioe)
@@ -121,7 +120,7 @@ public class ArchiveBuilder
 
     if (localRoot!=null)
     {
-      addDirectoryEntry(root,localRoot);
+      addDirectoryEntry(localRoot);
     }
     File[] files=root.listFiles();
     File f;
@@ -155,11 +154,11 @@ public class ArchiveBuilder
    */
   public void terminate()
   {
-    StreamTools.close(jos);
-    jos=null;
-    StreamTools.close(bos);
-    bos=null;
-    StreamTools.close(fos);
-    fos=null;
+    StreamTools.close(_jos);
+    _jos=null;
+    StreamTools.close(_bos);
+    _bos=null;
+    StreamTools.close(_fos);
+    _fos=null;
   }
 }

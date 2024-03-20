@@ -100,15 +100,13 @@ public class TextFileReader
   public boolean start()
   {
     boolean ret=true;
-    /*
     // Existenz test
-    if(!_path.canRead())
+    if ((_path!=null) && (!_path.canRead()))
     {
       LOGGER.error("File not found or unreadable ["+_path.getAbsolutePath()+"]");
       ret=false;
     }
     else
-    */
     {
       try
       {

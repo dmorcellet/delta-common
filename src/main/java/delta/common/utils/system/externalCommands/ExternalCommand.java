@@ -133,7 +133,7 @@ public class ExternalCommand
   {
     synchronized(ExternalCommand.class)
     {
-      String ret="Command #"+String.valueOf(_counter);
+      String ret="Command #"+_counter;
       _counter++;
       return ret;
     }
@@ -204,7 +204,7 @@ public class ExternalCommand
     _name=name;
     _command=command;
     _args=new ArrayList<String>();
-    if ((args!=null) && (args.size()>0))
+    if ((args!=null) && (!args.isEmpty()))
     {
       _args.addAll(args);
     }
@@ -219,7 +219,7 @@ public class ExternalCommand
     // Initialize process builder
     List<String> fullCommand=new ArrayList<String>();
     fullCommand.add(command);
-    if ((args!=null) && (args.size()>0))
+    if ((args!=null) && (!args.isEmpty()))
     {
       fullCommand.addAll(args);
     }
@@ -763,7 +763,7 @@ public class ExternalCommand
       }
       if (LOGGER.isInfoEnabled())
       {
-        LOGGER.info("Thread ["+getName()+"] died !");
+        LOGGER.info("Thread ["+super.getName()+"] died !");
       }
     }
   }
