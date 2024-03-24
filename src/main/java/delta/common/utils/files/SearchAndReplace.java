@@ -65,13 +65,22 @@ public class SearchAndReplace
         LOGGER.error("Could not copy ["+tmp.getAbsolutePath()+"] to ["+f.getAbsolutePath()+"]");
         ret=false;
       }
-      tmp.delete();
     }
     catch (Exception e)
     {
       LOGGER.error("",e);
-      if (tmp!=null) tmp.delete();
       ret=false;
+    }
+    finally
+    {
+      if (tmp!=null)
+      {
+        boolean ok=tmp.delete();
+        if (!ok)
+        {
+          LOGGER.warn("Could not delete file: "+tmp);
+        }
+      }
     }
     return ret;
   }

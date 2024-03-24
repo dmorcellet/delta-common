@@ -3,6 +3,8 @@ package delta.common.utils.files;
 import java.io.File;
 import java.io.FileFilter;
 
+import org.apache.log4j.Logger;
+
 import delta.common.utils.files.iterator.AbstractFileIteratorCallback;
 import delta.common.utils.files.iterator.FileIterator;
 
@@ -14,6 +16,8 @@ import delta.common.utils.files.iterator.FileIterator;
  */
 public class FilesDeleter extends AbstractFileIteratorCallback
 {
+  private static final Logger LOGGER=Logger.getLogger(FilesDeleter.class); 
+
   private File _rootPath;
   private FileFilter _filter;
   private boolean _deleteEmptyDirs;
@@ -29,7 +33,11 @@ public class FilesDeleter extends AbstractFileIteratorCallback
   {
     if ((_filter==null) || (_filter.accept(absolute)))
     {
-      absolute.delete();
+      boolean ok=absolute.delete();
+      if (!ok)
+      {
+        LOGGER.warn("Could not delete file: "+absolute);
+      }
     }
   }
 
@@ -44,7 +52,11 @@ public class FilesDeleter extends AbstractFileIteratorCallback
   {
     if (_deleteEmptyDirs)
     {
-      absolute.delete();
+      boolean ok=absolute.delete();
+      if (!ok)
+      {
+        LOGGER.warn("Could not delete directory: "+absolute);
+      }
     }
   }
 
