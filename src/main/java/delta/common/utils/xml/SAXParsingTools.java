@@ -34,6 +34,7 @@ public class SAXParsingTools
     {
       // Use the default (non-validating) parser
       SAXParserFactory factory=SAXParserFactory.newInstance();
+      factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
       SAXParser saxParser=factory.newSAXParser();
       saxParser.parse(source,engine);
       saxParser.reset();
@@ -58,6 +59,7 @@ public class SAXParsingTools
     {
       // Use the default (non-validating) parser
       SAXParserFactory factory=SAXParserFactory.newInstance();
+      factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
       SAXParser saxParser=factory.newSAXParser();
       InputSource source=new InputSource(url.openStream());
       saxParser.parse(source,engine);
