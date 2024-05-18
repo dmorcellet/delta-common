@@ -28,7 +28,7 @@ public class StringFilter
    */
   public StringFilter(String model, MatchType matchType, boolean ignoreCase)
   {
-    this(model,matchType,ignoreCase,false);
+    this(model,matchType,ignoreCase,true);
   }
 
   /**
@@ -50,6 +50,10 @@ public class StringFilter
       _model=model.toUpperCase();
     }
     _normalize=normalize;
+    if (normalize)
+    {
+      _model=normalize(_model);
+    }
   }
 
   /**
