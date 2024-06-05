@@ -88,6 +88,27 @@ public class SAXParsingTools
   }
 
   /**
+   * Get an integer attribute from SAX attributes.
+   * @param attrs Attributes to use.
+   * @param attrName Name of attribute to search.
+   * @param defaultValue Default value (returned if no such attribute is found, or if attribute's value does not parse as an integer).
+   * @return An integer value (found value or default value).
+   */
+  public static Integer getIntegerAttribute(Attributes attrs, String attrName, Integer defaultValue)
+  {
+    String valueStr=attrs.getValue(attrName);
+    if (valueStr!=null)
+    {
+      Integer parsedValue=NumericTools.parseInteger(valueStr,true);
+      if (parsedValue!=null)
+      {
+        return parsedValue;
+      }
+    }
+    return defaultValue;
+  }
+
+  /**
    * Get  long attribute from SAX attributes.
    * @param attrs Attributes to use.
    * @param attrName Name of attribute to search.
