@@ -67,7 +67,7 @@ public class TextFileWriter
    */
   public TextFileWriter(File path, String encoding, String endOfLine)
   {
-    this(path,(encoding!=null)?Charset.forName(encoding):Charset.defaultCharset(),endOfLine);      
+    this(path,(encoding!=null)?Charset.forName(encoding):Charset.defaultCharset(),endOfLine);
   }
   
   /**
