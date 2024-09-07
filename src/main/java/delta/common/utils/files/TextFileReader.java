@@ -9,7 +9,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.io.StreamTools;
 
@@ -19,7 +20,7 @@ import delta.common.utils.io.StreamTools;
  */
 public class TextFileReader
 {
-  private static final Logger LOGGER=Logger.getLogger(TextFileReader.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TextFileReader.class);
 
   // Charset to use
   private Charset _charset;

@@ -1,6 +1,7 @@
 package delta.common.utils.variables;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Resolves string formats that contain variable parts.
@@ -8,7 +9,7 @@ import org.apache.log4j.Logger;
  */
 public class VariablesResolver
 {
-  private static final Logger LOGGER=Logger.getLogger(VariablesResolver.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(VariablesResolver.class);
 
   private static final String OPEN_VARIABLE="${";
   private static final String END_VARIABLE="}";

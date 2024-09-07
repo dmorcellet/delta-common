@@ -8,7 +8,8 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A <tt>Translator</tt> is used to translate keys into messages in a given
@@ -21,7 +22,7 @@ import org.apache.log4j.Logger;
  */
 public class Translator
 {
-  private static final Logger LOGGER=Logger.getLogger(Translator.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(Translator.class);
 
   /**
    * Parent translator. Used to forward translation requests if they're not

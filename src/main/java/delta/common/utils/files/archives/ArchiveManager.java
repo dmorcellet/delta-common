@@ -5,7 +5,8 @@ import java.io.InputStream;
 import java.util.jar.JarFile;
 import java.util.zip.ZipEntry;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Manages access to an archive file.
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class ArchiveManager
 {
-  private static final Logger LOGGER=Logger.getLogger(ArchiveManager.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ArchiveManager.class);
 
   private File _archiveFile;
   private JarFile _archive;

@@ -1,6 +1,7 @@
 package delta.common.utils;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tools related to numeric values management.
@@ -8,7 +9,7 @@ import org.apache.log4j.Logger;
  */
 public class NumericTools
 {
-  private static final Logger LOGGER=Logger.getLogger(NumericTools.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(NumericTools.class);
 
   /**
    * String that indicates an infinite positive value.

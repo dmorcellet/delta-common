@@ -4,7 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A tool class that makes a bridge from a print stream to a string.
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class PrintStreamToStringBridge
 {
-  private static final Logger LOGGER=Logger.getLogger(PrintStreamToStringBridge.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(PrintStreamToStringBridge.class);
 
   private static final String DEFAULT_ENCODING="UTF-8";
   private String _encoding;

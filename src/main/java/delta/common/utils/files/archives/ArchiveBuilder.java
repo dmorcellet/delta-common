@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.io.FileIO;
 import delta.common.utils.io.StreamTools;
@@ -18,7 +19,7 @@ import delta.common.utils.io.StreamTools;
  */
 public class ArchiveBuilder
 {
-  private static final Logger LOGGER=Logger.getLogger(ArchiveBuilder.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ArchiveDeflater.class);
 
   private File _archiveFile;
   private FileOutputStream _fos;

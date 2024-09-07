@@ -6,7 +6,8 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.io.Writer;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Tool methods related to I/O streams.
@@ -14,7 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class StreamTools
 {
-  private static final Logger LOGGER=Logger.getLogger(StreamTools.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(StreamTools.class);
 
   /**
    * Close an input stream.

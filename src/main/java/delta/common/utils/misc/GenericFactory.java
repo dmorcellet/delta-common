@@ -3,7 +3,8 @@ package delta.common.utils.misc;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Typed factory.
@@ -12,7 +13,7 @@ import org.apache.log4j.Logger;
  */
 public class GenericFactory<T>
 {
-  private static final Logger LOGGER=Logger.getLogger(GenericFactory.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(GenericFactory.class);
 
   /**
    * Map of product names to constructors.

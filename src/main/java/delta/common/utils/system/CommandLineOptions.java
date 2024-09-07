@@ -3,7 +3,8 @@ package delta.common.utils.system;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A tools class to parse GNU-style command line options.
@@ -11,7 +12,7 @@ import org.apache.log4j.Logger;
  */
 public class CommandLineOptions
 {
-  private static final Logger LOGGER=Logger.getLogger(CommandLineOptions.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(CommandLineOptions.class);
 
   /**
    * Option seed

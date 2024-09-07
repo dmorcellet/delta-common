@@ -12,7 +12,8 @@ import java.util.Map;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -29,7 +30,7 @@ import delta.common.utils.io.StreamTools;
  */
 public abstract class DOMParsingTools
 {
-  private static final Logger LOGGER=Logger.getLogger(DOMParsingTools.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(DOMParsingTools.class);
 
   /**
    * Get a list of child tags.

@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.filter.ExtensionPredicate;
 
@@ -14,7 +15,7 @@ import delta.common.utils.files.filter.ExtensionPredicate;
  */
 public class SearchAndReplace
 {
-  private static final Logger LOGGER=Logger.getLogger(SearchAndReplace.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SearchAndReplace.class);
 
   /**
    * Constructor.

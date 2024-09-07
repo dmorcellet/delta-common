@@ -1,6 +1,7 @@
 package delta.common.utils.misc;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Object capable of finding classes that inherit from a superclass.
@@ -9,7 +10,7 @@ import org.apache.log4j.Logger;
  */
 public class ClassResolver<T>
 {
-  private static final Logger LOGGER=Logger.getLogger(ClassResolver.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ClassResolver.class);
 
   private Class<? extends T> _targetClass;
 

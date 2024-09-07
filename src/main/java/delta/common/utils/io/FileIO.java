@@ -5,7 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * File I/O methods.
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class FileIO
 {
-  private static final Logger LOGGER=Logger.getLogger(FileIO.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(FileIO.class);
 
   /**
    * Read the contents of a file into a byte buffer.

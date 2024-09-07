@@ -10,7 +10,8 @@ import javax.xml.transform.sax.SAXTransformerFactory;
 import javax.xml.transform.sax.TransformerHandler;
 import javax.xml.transform.stream.StreamResult;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.io.StreamTools;
 
@@ -20,7 +21,7 @@ import delta.common.utils.io.StreamTools;
  */
 public class XmlFileWriterHelper
 {
-  private static final Logger LOGGER=Logger.getLogger(XmlFileWriterHelper.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(XmlFileWriterHelper.class);
 
   /**
    * Write some XML data to a file.

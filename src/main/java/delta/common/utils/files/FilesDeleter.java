@@ -3,7 +3,8 @@ package delta.common.utils.files;
 import java.io.File;
 import java.io.FileFilter;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.iterator.AbstractFileIteratorCallback;
 import delta.common.utils.files.iterator.FileIterator;
@@ -16,7 +17,7 @@ import delta.common.utils.files.iterator.FileIterator;
  */
 public class FilesDeleter extends AbstractFileIteratorCallback
 {
-  private static final Logger LOGGER=Logger.getLogger(FilesDeleter.class); 
+  private static final Logger LOGGER=LoggerFactory.getLogger(FilesDeleter.class); 
 
   private File _rootPath;
   private FileFilter _filter;

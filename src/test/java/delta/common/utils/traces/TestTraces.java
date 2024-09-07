@@ -1,6 +1,7 @@
 package delta.common.utils.traces;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.TestCase;
 
@@ -10,7 +11,7 @@ import junit.framework.TestCase;
  */
 public class TestTraces extends TestCase
 {
-  private static final Logger LOGGER=Logger.getLogger(TestTraces.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TestTraces.class);
 
   /**
    * Constructor.

@@ -3,7 +3,8 @@ package delta.common.utils.text;
 import java.io.File;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.TextFileReader;
 import delta.common.utils.files.TextFileWriter;
@@ -15,7 +16,7 @@ import delta.common.utils.misc.MiscStringConstants;
  */
 public class TextFileConverter
 {
-  private static final Logger LOGGER=Logger.getLogger(TextFileConverter.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TextFileConverter.class);
 
   private String _sourceEncoding;
   private String _destEncoding;

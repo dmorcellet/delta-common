@@ -8,7 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Storage for the data in a table.
@@ -16,7 +17,7 @@ import org.apache.log4j.Logger;
  */
 public class DataTable
 {
-  private static final Logger LOGGER=Logger.getLogger(DataTable.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(DataTable.class);
 
   private Map<String,DataTableColumn<?>> _columnsMap;
   private List<DataTableColumn<?>> _columns;

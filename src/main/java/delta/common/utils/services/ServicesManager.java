@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Manager for all services.
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class ServicesManager
 {
-  private static final Logger LOGGER=Logger.getLogger(ServicesManager.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ServicesManager.class);
 
   /**
    * Reference to the sole instance of this class

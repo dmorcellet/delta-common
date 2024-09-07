@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Observable.
@@ -16,7 +17,7 @@ import org.apache.log4j.Logger;
  */
 public class Observable<V>
 {
-  private static final Logger LOGGER=Logger.getLogger(Observable.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(Observable.class);
 
   private V _value;
   private List<Observer<V>> _observers;

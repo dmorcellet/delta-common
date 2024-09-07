@@ -5,7 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.TextFileReader;
 import delta.common.utils.misc.MiscStringConstants;
@@ -16,7 +17,7 @@ import delta.common.utils.misc.MiscStringConstants;
  */
 public class TextUtils
 {
-  private static final Logger LOGGER=Logger.getLogger(TextUtils.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TextUtils.class);
 
   /**
    * Reads the contents of a text file as a string.

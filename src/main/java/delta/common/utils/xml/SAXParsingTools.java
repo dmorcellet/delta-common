@@ -6,7 +6,8 @@ import java.net.URL;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 
@@ -20,7 +21,7 @@ import delta.common.utils.xml.sax.SAXParserEngine;
  */
 public class SAXParsingTools
 {
-  private static final Logger LOGGER=Logger.getLogger(SAXParsingTools.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SAXParsingTools.class);
 
   /**
    * Parse a XML file.

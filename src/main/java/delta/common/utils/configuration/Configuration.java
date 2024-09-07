@@ -8,7 +8,8 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.BooleanTools;
 import delta.common.utils.NumericTools;
@@ -43,7 +44,7 @@ import delta.common.utils.misc.HexString2BufferCodec;
  */
 public class Configuration
 {
-  private static final Logger LOGGER=Logger.getLogger(Configuration.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(Configuration.class);
 
   private HashMap<String,HashMap<String,String>> _infos;
   private SimpleCryptDecrypt _cryptManager;

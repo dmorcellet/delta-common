@@ -1,6 +1,7 @@
 package delta.common.utils.misc;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Manages sleep time.
@@ -8,7 +9,7 @@ import org.apache.log4j.Logger;
  */
 public class SleepManager
 {
-  private static final Logger LOGGER=Logger.getLogger(SleepManager.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SleepManager.class);
 
   /**
    * Make this thread sleep for a specified amount of time. 

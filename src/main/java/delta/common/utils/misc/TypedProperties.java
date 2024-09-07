@@ -13,7 +13,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.BooleanTools;
 import delta.common.utils.NumericTools;
@@ -25,7 +26,7 @@ import delta.common.utils.io.StreamTools;
  */
 public class TypedProperties
 {
-  private static final Logger LOGGER=Logger.getLogger(TypedProperties.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TypedProperties.class);
 
   private Properties _props;
 

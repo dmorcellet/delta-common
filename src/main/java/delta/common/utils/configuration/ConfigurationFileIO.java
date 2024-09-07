@@ -2,7 +2,8 @@ package delta.common.utils.configuration;
 
 import java.io.File;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.TextFileReader;
 import delta.common.utils.files.TextFileWriter;
@@ -13,7 +14,7 @@ import delta.common.utils.files.TextFileWriter;
  */
 public class ConfigurationFileIO
 {
-  private static final Logger LOGGER=Logger.getLogger(ConfigurationFileIO.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ConfigurationFileIO.class);
 
   /**
    * Load the contents of a file into a configuration.

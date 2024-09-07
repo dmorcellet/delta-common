@@ -3,7 +3,8 @@ package delta.common.utils.environment;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Represents an host.
@@ -11,7 +12,7 @@ import org.apache.log4j.Logger;
  */
 public class Host
 {
-  private static final Logger LOGGER=Logger.getLogger(Host.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(Host.class);
 
   /**
    * Alias for the local host.

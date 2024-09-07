@@ -3,7 +3,8 @@ package delta.common.utils.xml;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -14,7 +15,7 @@ import org.xml.sax.SAXException;
  */
 public class ClasspathEntityResolver implements EntityResolver
 {
-  private static final Logger LOGGER=Logger.getLogger(ClasspathEntityResolver.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ClasspathEntityResolver.class);
 
   /**
    * Resolve entities by looking in the classpath.

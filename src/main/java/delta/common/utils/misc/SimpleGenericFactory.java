@@ -1,6 +1,7 @@
 package delta.common.utils.misc;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Typed factory.
@@ -9,7 +10,7 @@ import org.apache.log4j.Logger;
  */
 public class SimpleGenericFactory<T>
 {
-  private static final Logger LOGGER=Logger.getLogger(SimpleGenericFactory.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SimpleGenericFactory.class);
 
   /**
    * Class used to build new instances.

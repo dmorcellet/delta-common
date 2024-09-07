@@ -8,7 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The <tt>TranslatorsManager</tt> manages a all <tt>Translator</tt>
@@ -24,7 +25,7 @@ import org.apache.log4j.Logger;
  */
 public class TranslatorsManager
 {
-  private static final Logger LOGGER=Logger.getLogger(TranslatorsManager.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TranslatorsManager.class);
 
   /**
    * Reference to the sole instance of this class.

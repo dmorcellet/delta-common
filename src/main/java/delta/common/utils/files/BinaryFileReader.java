@@ -6,7 +6,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Reader to read a binary file.
@@ -14,7 +15,7 @@ import org.apache.log4j.Logger;
  */
 public class BinaryFileReader
 {
-  private static final Logger LOGGER=Logger.getLogger(BinaryFileReader.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(BinaryFileReader.class);
 
   private DataInputStream _dis;
   private BufferedInputStream _bis;

@@ -5,7 +5,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.misc.CRC;
 
@@ -15,7 +16,7 @@ import delta.common.utils.misc.CRC;
  */
 public class RecursiveDiff
 {
-  private static final Logger LOGGER=Logger.getLogger(RecursiveDiff.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(RecursiveDiff.class);
 
   private File _f1;
   private File _f2;

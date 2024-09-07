@@ -2,7 +2,8 @@ package delta.common.utils.services;
 
 import java.io.PrintStream;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Base class for services.
@@ -10,7 +11,7 @@ import org.apache.log4j.Logger;
  */
 public class Service
 {
-  private static final Logger LOGGER=Logger.getLogger(Service.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(Service.class);
 
   private String _name;
   private ServiceState _state;

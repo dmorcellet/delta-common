@@ -6,7 +6,8 @@ import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.FileCopy;
 
@@ -16,7 +17,7 @@ import delta.common.utils.files.FileCopy;
  */
 public class ArchiveDeflater
 {
-  private static final Logger LOGGER=Logger.getLogger(ArchiveDeflater.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(ArchiveDeflater.class);
 
   private File _archivePath;
   private File _root;

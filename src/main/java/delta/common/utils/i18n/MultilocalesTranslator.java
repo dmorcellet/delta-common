@@ -7,7 +7,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A translator that supports several locales.
@@ -15,7 +16,7 @@ import org.apache.log4j.Logger;
  */
 public class MultilocalesTranslator
 {
-  private static final Logger LOGGER=Logger.getLogger(MultilocalesTranslator.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(MultilocalesTranslator.class);
 
   private String _baseName;
   private Map<Locale,Translator> _translators;

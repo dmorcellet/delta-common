@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.io.StreamTools;
 
@@ -20,7 +21,7 @@ import delta.common.utils.io.StreamTools;
  */
 public abstract class FileCopy
 {
-  private static final Logger LOGGER=Logger.getLogger(FileCopy.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(FileCopy.class);
 
   private static final int BUFFER_SIZE=8192*4;
 

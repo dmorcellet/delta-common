@@ -1,6 +1,7 @@
 package delta.common.utils.i18n;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import junit.framework.TestCase;
 
@@ -10,7 +11,7 @@ import junit.framework.TestCase;
  */
 public class TestI18n extends TestCase
 {
-  private static final Logger LOGGER=Logger.getLogger(TestI18n.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TestI18n.class);
 
   private static final Translator _translator=TranslatorsManager.getInstance().createTranslator(TestI18n.class);
 

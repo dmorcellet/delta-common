@@ -5,7 +5,8 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import delta.common.utils.files.TextFileReader;
 
@@ -15,7 +16,7 @@ import delta.common.utils.files.TextFileReader;
  */
 public class TextEncodingFinder
 {
-  private static final Logger LOGGER=Logger.getLogger(TextEncodingFinder.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(TextEncodingFinder.class);
 
   private List<String> _encodings;
 

@@ -1,6 +1,7 @@
 package delta.common.utils.xml.sax;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -12,7 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class SAXParserEngine<RESULT> extends DefaultHandler
 {
-  private static final Logger LOGGER=Logger.getLogger(SAXParserEngine.class);
+  private static final Logger LOGGER=LoggerFactory.getLogger(SAXParserEngine.class);
 
   private SAXParserValve<RESULT> _initial;
   private SAXParserValve<?> _current;
