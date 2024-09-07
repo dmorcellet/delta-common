@@ -23,7 +23,7 @@ public class SleepManager
     }
     catch(InterruptedException ie)
     {
-      LOGGER.error(ie);
+      LOGGER.error("",ie);
     }
   }
 }
