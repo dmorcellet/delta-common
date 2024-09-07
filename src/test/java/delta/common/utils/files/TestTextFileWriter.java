@@ -2,27 +2,23 @@ package delta.common.utils.files;
 
 import java.io.File;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
 import delta.common.utils.environment.User;
-import junit.framework.TestCase;
 
 /**
  * Unit test class for the text file writer.
  * @author DAM
  */
-public class TestTextFileWriter extends TestCase
+@DisplayName("Text file writer test")
+class TestTextFileWriter
 {
-  /**
-   * Constructor.
-   */
-  public TestTextFileWriter()
-  {
-    super("Text file writer test");
-  }
-
   /**
    * Test a simple basic usage of the text file writer.
    */
-  public void testWriteSimpleFile()
+  @Test
+  void testWriteSimpleFile()
   {
     User user=User.getLocalUser();
     File userHome=user.getHomeDir();

@@ -1,28 +1,26 @@
 package delta.common.utils.text;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import java.util.List;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for the string splitter.
  * @author DAM
  */
-public class TestStringSplitter extends TestCase
+@DisplayName("String splitter test")
+class TestStringSplitter
 {
-  /**
-   * Constructor.
-   */
-  public TestStringSplitter()
-  {
-    super("String splitter test");
-  }
-
   /**
    * Test string splitting.
    */
-  public void testStringSplitter()
+  @Test
+  void testStringSplitter()
   {
     String[] samples= {"",",",",,",",,,",",adsd,bdff,","dfgf","dfgf,dds"};
     char[] separators= {',',',',',',',',',',',',','};
@@ -32,7 +30,7 @@ public class TestStringSplitter extends TestCase
       { "dfgf" },
       { "dfgf", "dds" }
     };
-    Assert.assertEquals(samples.length,separators.length);
+    assertEquals(samples.length,separators.length);
     int nb=samples.length;
 
     for(int i=0;i<nb;i++)
@@ -42,16 +40,16 @@ public class TestStringSplitter extends TestCase
         String[] ret=StringSplitter.split(samples[i],separators[i]);
         if (expectedResults[i]==null)
         {
-          Assert.assertNull(ret);
+          assertNull(ret);
         }
         else
         {
-          Assert.assertNotNull(ret);
+          assertNotNull(ret);
           int nbParts=ret.length;
-          Assert.assertEquals(expectedResults[i].length,nbParts);
+          assertEquals(expectedResults[i].length,nbParts);
           for(int j=0;j<nbParts;j++)
           {
-            Assert.assertEquals(expectedResults[i][j],ret[j]);
+            assertEquals(expectedResults[i][j],ret[j]);
           }
         }
       }
@@ -60,16 +58,16 @@ public class TestStringSplitter extends TestCase
         List<String> ret=StringSplitter.splitAsList(samples[i],separators[i]);
         if (expectedResults[i]==null)
         {
-          Assert.assertNull(ret);
+          assertNull(ret);
         }
         else
         {
-          Assert.assertNotNull(ret);
+          assertNotNull(ret);
           int nbParts=ret.size();
-          Assert.assertEquals(expectedResults[i].length,nbParts);
+          assertEquals(expectedResults[i].length,nbParts);
           for(int j=0;j<nbParts;j++)
           {
-            Assert.assertEquals(expectedResults[i][j],ret.get(j));
+            assertEquals(expectedResults[i][j],ret.get(j));
           }
         }
       }

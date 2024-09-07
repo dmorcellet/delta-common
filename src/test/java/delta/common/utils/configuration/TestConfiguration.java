@@ -1,17 +1,24 @@
 package delta.common.utils.configuration;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.File;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import delta.common.utils.environment.FileSystem;
 import delta.common.utils.files.TextFileWriter;
-import junit.framework.Assert;
-import junit.framework.TestCase;
+
 
 /**
  * Tests for the configuration service.
  * @author DAM
  */
-public class TestConfiguration extends TestCase
+@DisplayName("Configuration test")
+class TestConfiguration
 {
   private static final String IF_EXISTS_SECTION="TEST_IF_EXISTS";
   private static final String FLAG_VAR="FLAG";
@@ -22,38 +29,32 @@ public class TestConfiguration extends TestCase
   private static final String VALUE2="vé";
 
   /**
-   * Constructor.
-   */
-  public TestConfiguration()
-	{
-		super("Configuration test");
-	}
-
-  /**
    * Test the "get user configuration" feature.
    */
-  public void testGetUserConfiguration()
-	{
-		Configuration c=Configurations.getUserConfiguration();
-		Assert.assertNotNull(c);
-	}
+  @Test
+  void testGetUserConfiguration()
+  {
+    Configuration c=Configurations.getUserConfiguration();
+    assertNotNull(c);
+  }
 
-	/**
+  /**
    * Tests the "if exists" feature.
-	 */
-  public void testIfExists()
+   */
+  @Test
+  void testIfExists()
   {
     File cfgFile=buildIfExistsTestFile();
     Configuration cfg=ConfigurationFileIO.loadFile(cfgFile);
-    Assert.assertNotNull(cfg);
+    assertNotNull(cfg);
     boolean resolution=cfg.resolveValues();
-    Assert.assertEquals(true,resolution);
+    assertTrue(resolution);
     String v1=cfg.getStringValue(IF_EXISTS_SECTION, VALUE1_VAR, null);
-    Assert.assertNotNull(v1);
-    Assert.assertEquals(VALUE1,v1);
+    assertNotNull(v1);
+    assertEquals(VALUE1,v1);
     String v2=cfg.getStringValue(IF_EXISTS_SECTION, VALUE2_VAR, null);
-    Assert.assertNotNull(v2);
-    Assert.assertEquals(VALUE2,v2);
+    assertNotNull(v2);
+    assertEquals(VALUE2,v2);
     cfgFile.delete();
   }
 
@@ -80,8 +81,9 @@ public class TestConfiguration extends TestCase
   /**
    * Test the "dump configuration" feature.
    */
-  public void testDump()
-	{
-		Configurations.getUserConfiguration().dump(System.out);
-	}
+  @Test
+  void testDump()
+  {
+    Configurations.getUserConfiguration().dump(System.out);
+  }
 }

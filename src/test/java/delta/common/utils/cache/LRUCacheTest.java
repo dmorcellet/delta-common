@@ -1,17 +1,18 @@
 package delta.common.utils.cache;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test class for the LRU cache.
  * @author DAM
  */
-public class LRUCacheTest extends TestCase
+public class LRUCacheTest
 {
   /**
    * Simple usage test.
    */
-  public void test()
+  @Test
+  void test()
   {
     LRUCache<Integer,String> cache=new LRUCache<Integer,String>(4);
     cache.registerObject(Integer.valueOf(1),"Value_1");
@@ -24,5 +25,4 @@ public class LRUCacheTest extends TestCase
     cache.registerObject(Integer.valueOf(5),"Value_5");
     System.out.println(cache.getKeys());
   }
-
 }

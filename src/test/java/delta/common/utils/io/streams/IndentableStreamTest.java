@@ -1,17 +1,18 @@
 package delta.common.utils.io.streams;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
 /**
  * Simple test class for the IndentableStream.
  * @author DAM
  */
-public class IndentableStreamTest extends TestCase
+public class IndentableStreamTest
 {
   /**
    * Some tests.
    */
-  public void test()
+  @Test
+  void test()
   {
     IndentableStream s=new IndentableStream(System.out);
     System.out.println("****");

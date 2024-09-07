@@ -1,26 +1,22 @@
 package delta.common.utils.text;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for the normalizing strings.
  * @author sgronlun
  */
-public class TestStringNormalising extends TestCase
+@DisplayName("String normalizing test")
+class TestStringNormalising
 {
-  /**
-   * Constructor.
-   */
-  public TestStringNormalising()
-  {
-    super("String normalizing test");
-  }
-
   /**
    * Test string normalizing
    */
-  public void testStringNormalizing()
+  @Test
+  void testStringNormalizing()
   {
     // Chars obtained from quests.xml plus a few more
     String utf8string="!\"#$%&'()*+,-./0123456789:;<=>?"
@@ -35,8 +31,6 @@ public class TestStringNormalising extends TestCase
         +"–—‘’“”•...‰";
 
     String norm=StringFilter.normalize(utf8string);
-    // System.out.println(expected);
-    // System.out.println(norm);
-    Assert.assertEquals(norm,expected);
+    assertEquals(norm,expected);
   }
 }

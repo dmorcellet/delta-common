@@ -1,27 +1,22 @@
 package delta.common.utils.tables;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.util.Date;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for data tables.
  * @author DAM
  */
-public class TestDataTable extends TestCase
+@DisplayName("Data table test")
+class TestDataTable
 {
   private static final String NAME_COLUMN="NAME";
   private static final String DATE_COLUMN="DATE";
   private static final int NB_ROWS=10;
-
-  /**
-   * Constructor.
-   */
-  public TestDataTable()
-  {
-    super("Data table test");
-  }
 
   private DataTable buildTable()
   {
@@ -30,11 +25,11 @@ public class TestDataTable extends TestCase
     // Name column
     table.addColumn(NAME_COLUMN,String.class);
     DataTableColumn<?> nameColumn=table.getColumnByKey(NAME_COLUMN);
-    Assert.assertNotNull(nameColumn);
+    assertNotNull(nameColumn);
     // Date column
     table.addColumn(DATE_COLUMN,Date.class);
     DataTableColumn<?> dateColumn=table.getColumnByKey(DATE_COLUMN);
-    Assert.assertNotNull(dateColumn);
+    assertNotNull(dateColumn);
 
     return table;
   }
@@ -56,10 +51,11 @@ public class TestDataTable extends TestCase
   /**
    * Test data table building.
    */
-  public void testBuildTable()
+  @Test
+  void testBuildTable()
   {
     DataTable table=buildTable();
-    Assert.assertNotNull(table);
+    assertNotNull(table);
     fillTable(table);
     table.dump(System.out);
   }
@@ -67,7 +63,8 @@ public class TestDataTable extends TestCase
   /**
    * Test data table sorting.
    */
-  public void testSortTable()
+  @Test
+  void testSortTable()
   {
     DataTable table=buildTable();
     fillTable(table);

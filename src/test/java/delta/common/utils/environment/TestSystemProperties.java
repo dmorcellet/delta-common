@@ -5,22 +5,17 @@ import java.util.HashSet;
 import java.util.Properties;
 import java.util.Set;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 /**
+ * Test for system properties. 
  * @author DAM
  */
-public class TestSystemProperties extends TestCase
+@DisplayName("Test system properties")
+class TestSystemProperties
 {
-  /**
-   * Constructor.
-   */
-  public TestSystemProperties()
-  {
-    super("Test system properties");
-  }
-
-  private static String[][] PROPERTIES={
+  private static final String[][] PROPERTIES={
     {"java.version","Java Runtime Environment version"},
     {"java.vendor","Java Runtime Environment vendor"},
     {"java.vendor.url","Java vendor URL"},
@@ -54,7 +49,8 @@ public class TestSystemProperties extends TestCase
   /**
    * Test access to system properties.
    */
-  public void testProperties()
+  @Test
+  void testProperties()
   {
     Set<String> properties=new HashSet<String>();
     String propertyName;

@@ -1,30 +1,24 @@
 package delta.common.utils.traces;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import junit.framework.TestCase;
 
 /**
  * Traces test.
  * @author DAM
  */
-public class TestTraces extends TestCase
+@DisplayName("Traces test")
+class TestTraces
 {
   private static final Logger LOGGER=LoggerFactory.getLogger(TestTraces.class);
 
   /**
-   * Constructor.
-   */
-  public TestTraces()
-  {
-    super("Traces test");
-  }
-
-  /**
    * Performance test.
    */
-  public void testLoggersPerformance()
+  @Test
+  void testLoggersPerformance()
   {
     final int NB=100000;
     final int GROUP=1000;
